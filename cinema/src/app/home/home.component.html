@@ -1,19 +1,16 @@
-<mat-toolbar>
-    <mat-toolbar-row >
-        <div id="title">
-            <span class="spacer"> </span>
-            <h3>Cinema Web App</h3>
-            <span class="spacer"> </span>
-        </div>
+
+<mat-toolbar class="custom-toolbar">
+    <mat-toolbar-row>
+        <span class="title-center">CINEMA WEB APP</span>
     </mat-toolbar-row>
     <mat-toolbar-row>
         <span class="spacer"> </span>
-        <a routerLink="['/home']" routerLinkActive="router-link-active" > Home</a>
+        <a [routerLink]="['']"> Home</a>
         <span class="spacer"> </span>
-        <a> Home</a>
+        <a [routerLink]="['calendario-uscite']" >Calendario Uscite</a>
         <span class="spacer"> </span>
-        <a> Home</a>
+        <a> News</a>
         <span class="spacer"> </span>
     </mat-toolbar-row>
-
 </mat-toolbar>
+<router-outlet></router-outlet>

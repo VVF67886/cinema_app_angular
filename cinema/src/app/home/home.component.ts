@@ -1,20 +1,11 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { ServizioDatiService } from '../servizi/servizio-dati.service';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatButtonModule,MatToolbarModule],
+  imports: [MatToolbarModule,RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.less',
 })
-export class HomeComponent {
-  constructor(private dati:ServizioDatiService){}
-  prova() {
-    this.dati.prova().subscribe(
-      dati =>
-      {console.log(dati)}
-    )
-  }
-}
+export class HomeComponent {}
