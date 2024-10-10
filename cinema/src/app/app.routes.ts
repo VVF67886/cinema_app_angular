@@ -11,12 +11,6 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    children: [
-      {
-        path: 'calendario-uscite',
-        component: CalendarioUsciteComponent,
-      },
-    ],
   },
   {
     path: 'calendario-uscite',

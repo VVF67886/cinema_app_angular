@@ -13,15 +13,20 @@ import { NgFor} from '@angular/common';
 })
 export class HomeComponent implements OnInit {
   cinemaService: CinemaService = inject(CinemaService);
-  public generi: Array<any> = [];
+  
   public film: Array<any> = [];
 
   ngOnInit(): void {
-    this.cinemaService.getGeneri().subscribe((d) => {
-      this.generi = CinemaService.rowsToObjects(d);
-    });
-    this.cinemaService.getFilmPerGenere('Drammatico').subscribe((d) => {
+   
+     this.cinemaService.getFilmPerGenere('drammatico').subscribe((d) => {
+      console.log(d);
       this.film = CinemaService.rowsToObjects(d);
-    });
+      
+    }); 
+    /* this.cinemaService.getFilmDramm().subscribe((d) => {
+      console.log(d);
+      this.film = CinemaService.rowsToObjects(d);
+      console.log(this.film);
+    }); */
   }
 }

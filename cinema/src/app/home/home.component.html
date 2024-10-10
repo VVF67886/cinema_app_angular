@@ -15,7 +15,7 @@
     <div class="container" >
         <div  *ngFor="let f of film" class="card" >
         <mat-card appearance="outlined">
-            <img mat-card-image src={{f.immagine}}>
+            <img mat-card-image src={{f.immagine}} alt= "{{f.titolo}}" >
         </mat-card>
         </div>
     </div>
