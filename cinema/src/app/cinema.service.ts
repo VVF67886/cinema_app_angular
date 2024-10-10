@@ -21,6 +21,10 @@ export class CinemaService {
     params=params.set("categoria",genere);
     return this.http.get<IAnswer>(this.apiUrl + "film", {params});
   }
+
+  getFilmDramm() {
+    return this.http.get<IAnswer>("http://www.ve.dipvvf.it/corsong/resources/film?categoria=drammatico");
+  }
   
   public static rowsToObjects(data: IAnswer) {
     let retArray = [];

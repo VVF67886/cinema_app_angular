@@ -1,0 +1,23 @@
+<mat-toolbar class="custom-toolbar">
+    <mat-toolbar-row>
+        <span class="title-center">CINEMA WEB APP</span>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+        <span class="spacer"> </span>
+        <a [routerLink]="['']"> Home</a>
+        <span class="spacer"> </span>
+        <a [routerLink]="['calendario-uscite']">Calendario Uscite</a>
+        <span class="spacer"> </span>
+        <a> News</a>
+        <span class="spacer"> </span>
+    </mat-toolbar-row>
+</mat-toolbar>
+    <div class="container" >
+        <div  *ngFor="let f of film" class="card" >
+        <mat-card appearance="outlined">
+            <img mat-card-image src={{f.immagine}} alt= "{{f.titolo}}" >
+        </mat-card>
+        </div>
+    </div>
+
+<router-outlet></router-outlet>

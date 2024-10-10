@@ -10,18 +10,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrl: './app.component.less'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   
-  cinemaService: CinemaService = inject(CinemaService);
-  public generi:Array<any>=[];
-  public film:Array<any>=[];
-  ngOnInit(): void {
-    this.cinemaService.getGeneri().subscribe(d=>{
-      this.generi=CinemaService.rowsToObjects(d);
-    });
-    this.cinemaService.getFilmPerGenere("Drammatico").subscribe(d=>{
-      this.film=CinemaService.rowsToObjects(d);
-    });
-  }
+  
+  
   title = 'cinema';
 }
