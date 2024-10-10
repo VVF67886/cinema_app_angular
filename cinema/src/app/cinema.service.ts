@@ -12,14 +12,18 @@ export class CinemaService {
   private apiUrl="http://www.ve.dipvvf.it/corsong/resources/"
   getGeneri(){
     
-    const params = new HttpParams()
+    const params = new HttpParams();
     return this.http.get<IAnswer>(this.apiUrl + "categorie", {params});
   }
   getFilmPerGenere(genere:string){
     
-    const params = new HttpParams();
-    params.set("categoria",genere);
+    let params = new HttpParams();
+    params=params.set("categoria",genere);
     return this.http.get<IAnswer>(this.apiUrl + "film", {params});
+  }
+
+  getFilmDramm() {
+    return this.http.get<IAnswer>("http://www.ve.dipvvf.it/corsong/resources/film?categoria=drammatico");
   }
   
   public static rowsToObjects(data: IAnswer) {
