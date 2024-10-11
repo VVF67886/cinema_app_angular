@@ -13,6 +13,7 @@ import { TrameComponent } from './trame/trame.component';
 import { DescrizioneTramaComponent } from './descrizione-trama/descrizione-trama.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers';
+import { DescrizioneNewsComponent } from './descrizione-news/descrizione-news.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { reducers } from './reducers';
     HomeBodyComponent,
     NewsComponent,
     TrameComponent,
-    DescrizioneTramaComponent
+    DescrizioneTramaComponent,
+    DescrizioneNewsComponent
   ],
   imports: [
     BrowserModule,

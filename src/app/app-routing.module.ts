@@ -6,6 +6,7 @@ import { HomeBodyComponent } from './home-body/home-body.component';
 import { NewsComponent } from './news/news.component';
 import { TrameComponent } from './trame/trame.component';
 import { DescrizioneTramaComponent } from './descrizione-trama/descrizione-trama.component';
+import { DescrizioneNewsComponent } from './descrizione-news/descrizione-news.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeBodyComponent},
@@ -13,7 +14,9 @@ const routes: Routes = [
     { path: 'descrizione', component: DescrizioneTramaComponent}
   ]},
   { path: 'calendario-uscite', component: CalendarioUsciteComponent},
-  { path: 'news', component: NewsComponent}
+  { path: 'news', component: NewsComponent, children: [
+    { path: 'descrizione', component: DescrizioneNewsComponent}
+  ]}
 ];
 
 @NgModule({

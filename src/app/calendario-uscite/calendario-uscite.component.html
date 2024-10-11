@@ -4,12 +4,25 @@
 <div class="d-flex justify-content-around">
     <button class="btn-static btn btn-primary mb-4" (click)="scegliFilm('scorsa settimana')">Scorsa settimana</button>
     <button class="btn-static btn btn-primary mb-4" (click)="scegliFilm('questa settimana')">Questa settimana</button>
+    <button class="btn-static btn btn-primary mb-4" (click)="scegliFilm('tra 1 settimana')">Tra 1 settimana</button>
+</div>
+<div class="d-flex justify-content-around">
+    <button class="btn-static btn btn-primary mb-4" (click)="scegliFilm('tra 2 settimana')">Tra 2 settimane</button>
+    <button class="btn-static btn btn-primary mb-4" (click)="scegliFilm('tra 3 settimana')">Tra 3 settimane</button>
     <button class="btn-static btn btn-primary mb-4">Scegli periodo</button>
 </div>
-<div class="d-flex justify-content-center">
-    
-    <div *ngFor="let film of filmsToShow">
-        <a type="submit" routerLinkActive="true"><img src="{{film['immagine']}}" ></a>
+<div class="pb-5">
+    <h4 *ngIf="filmsToShow.length>0" align="center">Film usciti nel periodo selezionato</h4>
+    <div class="d-flex justify-content-around mt-5">
+        <div *ngFor="let film of filmsToShow" class="d-flex">
+            <a type="submit" routerLinkActive="true"><img src="{{film['immagine']}}" ></a>
+            <div class="boxed_div mx-5 d-flex flex-column justify-content-evenly">
+                <h6 class="text-success">{{film['casaProduzionme']}}</h6>
+                <b>Genere:</b> {{film['categoria']}} <br>
+                <b>Anno:</b> {{film['annoProduzione']}} <br>
+                <b>Uscita:</b> {{film['dataUscita'] | date: 'mediumDate'}} <br>
+                <b>Regia:</b> {{film['regia']}}<br>
+            </div>
+        </div>
     </div>
-    
 </div>
