@@ -15,6 +15,11 @@ export class CinemaService {
     const params = new HttpParams();
     return this.http.get<IAnswer>(this.apiUrl + "categorie", {params});
   }
+  getNews(){
+    
+    const params = new HttpParams();
+    return this.http.get<IAnswer>(this.apiUrl + "news", {params});
+  }
   getFilmPerGenere(genere:string){
     
     let params = new HttpParams();
