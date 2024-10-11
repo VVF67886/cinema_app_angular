@@ -1,13 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { CinemaService } from '../cinema.service';
 import { NgFor} from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor,MatCardModule, MatToolbarModule, RouterModule],
+  imports: [NgFor,MatCardModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.less',
 })

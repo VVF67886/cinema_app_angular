@@ -1,3 +1,18 @@
+<mat-toolbar class="custom-toolbar">
+  <mat-toolbar-row>
+      <span class="title-center">CINEMA WEB APP</span>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+      <span class="spacer"> </span>
+      <a [routerLink]="['']"> Home</a>
+      <span class="spacer"> </span>
+      <a [routerLink]="['calendario-uscite']">Calendario Uscite</a>
+      <span class="spacer"> </span>
+      <a [routerLink]="['news']"> News</a>
+      <span class="spacer"> </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
 <router-outlet></router-outlet>
 
 
