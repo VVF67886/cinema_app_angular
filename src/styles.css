@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.btn-primary {
+    background-color: #720000 !important;
+    border-color: white !important;
+    color: white;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    background-color: #910101  !important;
+    border-color: white  !important;
+}
