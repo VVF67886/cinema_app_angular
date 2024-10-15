@@ -9,13 +9,29 @@
 <div class="d-flex justify-content-around">
     <button class="btn-static btn btn-primary mb-4" (click)="scegliFilm('tra 2 settimana')">Tra 2 settimane</button>
     <button class="btn-static btn btn-primary mb-4" (click)="scegliFilm('tra 3 settimana')">Tra 3 settimane</button>
-    <button class="btn-static btn btn-primary mb-4">Scegli periodo</button>
+    <button class="btn-static btn btn-primary mb-4" (click)="dataPicker()">Scegli periodo</button>
 </div>
+
+<div align="center" class="mt-5" *ngIf="isDataPickerSelected">
+    <mat-form-field>
+        <mat-label>Scegli il periodo</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate placeholder="Data inizio" #dateRangeStart>
+            <input matEndDate placeholder="Data fine" #dateRangeEnd
+                (dateChange)="dateRangeChange(dateRangeStart, dateRangeEnd)">
+        </mat-date-range-input>
+        <mat-hint> Formato Data: MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+</div>
+
 <div class="pb-5">
     <h4 *ngIf="filmsToShow.length>0" align="center">Film usciti nel periodo selezionato</h4>
-    <div class="d-flex justify-content-around mt-5">
+    <div class="d-flex justify-content-around mt-5 box_wrap">
+        
         <div *ngFor="let film of filmsToShow" class="d-flex">
-            <a type="submit" routerLinkActive="true"><img src="{{film['immagine']}}" ></a>
+            <a type="submit" routerLinkActive="true"><img src="{{film['immagine']}}"></a>
             <div class="boxed_div mx-5 d-flex flex-column justify-content-evenly">
                 <h6 class="text-success">{{film['casaProduzionme']}}</h6>
                 <b>Genere:</b> {{film['categoria']}} <br>
@@ -24,5 +40,6 @@
                 <b>Regia:</b> {{film['regia']}}<br>
             </div>
         </div>
+
     </div>
 </div>

@@ -14,7 +14,12 @@ import { DescrizioneTramaComponent } from './descrizione-trama/descrizione-trama
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './reducers';
 import { DescrizioneNewsComponent } from './descrizione-news/descrizione-news.component';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { PickerComponent } from './picker/picker.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -26,16 +31,23 @@ import { DescrizioneNewsComponent } from './descrizione-news/descrizione-news.co
     NewsComponent,
     TrameComponent,
     DescrizioneTramaComponent,
-    DescrizioneNewsComponent
+    DescrizioneNewsComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(reducers)
+    MatDatepickerModule,
+    StoreModule.forRoot(reducers),
+    MatFormFieldModule,
+    PickerComponent
   ],
   providers: [
     CinemaService,
-    provideHttpClient()
+    provideHttpClient(),
+    provideNativeDateAdapter(),
+    provideAnimations(),
+    provideAnimationsAsync() 
   ],
   bootstrap: [AppComponent]
 })

@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'trame', component: TrameComponent, children: [
     { path: 'descrizione', component: DescrizioneTramaComponent}
   ]},
-  { path: 'calendario-uscite', component: CalendarioUsciteComponent},
+  { path: 'calendario-uscite', component: CalendarioUsciteComponent },
   { path: 'news', component: NewsComponent, children: [
     { path: 'descrizione', component: DescrizioneNewsComponent}
   ]}

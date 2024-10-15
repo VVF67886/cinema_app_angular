@@ -4,3 +4,9 @@
   border: 5px solid green;
   padding: 10px;
 }
+
+.box_wrap {
+  flex-wrap: wrap;
+  gap: 50px;
+
+}

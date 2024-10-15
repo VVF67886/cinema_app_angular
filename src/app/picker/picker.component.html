@@ -1,0 +1,11 @@
+
+<mat-form-field>
+    <mat-label>Scegli il periodo</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Data inizio" #dateRangeStart>
+        <input matEndDate placeholder="Data fine" #dateRangeEnd (dateChange)="dateRangeChange(dateRangeStart, dateRangeEnd)">
+    </mat-date-range-input>
+    <mat-hint> Formato Data: MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>
